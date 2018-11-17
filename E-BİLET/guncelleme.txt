@@ -1,0 +1,87 @@
+//GÜNCELLEMEE****** 
+   
+   struct yolcubilgi
+   {
+      char isim[20];
+      char soyisim[20];
+      char telefon[20];
+      char cinsiyet;
+                  
+   }yolcubilgiler[6];
+    
+   if(ilk<son)  //1. tarih ve 1.sefer için güncelleme
+   {
+     dosya2=fopen("seferler1.txt","a");
+     
+     //sefer bilgileri için
+     for(int i=1;i<=yolcusayisi;i++)
+     {
+       fprintf(dosya2,"%d %d %d %c",guncelgeciciler[i].binis,guncelgeciciler[i].inis,guncelgeciciler[i].koltukno,guncelgeciciler[i].cinsiyet);      
+        fprintf(dosya2,"\n");     
+     }
+               
+       fclose(dosya2);
+       
+      //yolcu bilgileri giriþ baþý********* 
+      
+      FILE *gecici;
+      FILE *yolcu1;
+      
+      geciciler=fopen("yolcugiris.txt","r");
+      yolcu1=fopen("yolcular1.txt","a");
+      
+     for(int i=1;i<=yolcusayisi;i++)
+     {
+        fscanf(geciciler,"%s %s %s %c",&yolcubilgi[i].isim,&yolcubilgi[i].soyisim,&yolcubilgi[i].telefon,&yolcubilgi[i].cinsiyet); 
+        printf(yolcu1,"%s %s %s %c\n",yolcubilgi[i].isim,yolcubilgi[i].soyisim,yolcubilgi[i].telefon,yolcubilgi[i].cinsiyet);    
+             
+     } 
+     fclose(geciciler);
+     fclose(yolcu1);
+     
+     geciciler=fopen("yolcugiris.txt","w");//yolcugiris.txt dosyasýnýn içini boþaltmak için
+     fclose(geciciler);
+      //yolcubilgileri giriþ sonu******** 
+               
+   }
+   if(ilk>son)
+   {
+      dosya3=fopen("seferler2.txt","a");
+     
+     for(int i=1;i<=yolcusayisi;i++)
+     {
+       fprintf(dosya2,"%d %d %d %c",guncelgeciciler[i].binis,guncelgeciciler[i].inis,guncelgeciciler[i].koltukno,guncelgeciciler[i].cinsiyet);      
+        fprintf(dosya2,"\n");     
+     }        
+     
+     fclose(dosya3);
+     
+     
+     //yolcu bilgileri giriþ baþý********* 
+      
+      FILE *gecici;
+      FILE *yolcu2;
+      
+      geciciler=fopen("yolcugiris.txt","r");
+      yolcu2=fopen("yolcular2.txt","a");
+      
+     for(int i=1;i<=yolcusayisi;i++)
+     {
+        fscanf(geciciler,"%s %s %s %c",&yolcubilgi[i].isim,&yolcubilgi[i].soyisim,&yolcubilgi[i].telefon,&yolcubilgi[i].cinsiyet); 
+        printf(yolcu1,"%s %s %s %c\n",yolcubilgi[i].isim,yolcubilgi[i].soyisim,yolcubilgi[i].telefon,yolcubilgi[i].cinsiyet);    
+             
+     } 
+     fclose(geciciler);
+     fclose(yolcu1);
+     
+     geciciler=fopen("yolcugiris.txt","w");//yolcugiris.txt dosyasýnýn içini boþaltmak için
+     fclose(geciciler);
+      //yolcubilgileri giriþ sonu********
+                
+   }
+   
+   
+   
+    
+   //GUNCELLEME SON***********
+   
